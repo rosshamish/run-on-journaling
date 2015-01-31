@@ -6,7 +6,7 @@ app.controller('editCtrl', ['$scope', '$window', function($scope, $window) {
 	var opts = {
 		container: 'epiceditor',
 		textarea: null,
-		basePath: '../css/epiceditor/',
+		basePath: '../../css/epiceditor/',
 		clientSideStorage: true,
 		localStorageName: 'epiceditor',
 		useNativeFullscreen: true,
@@ -19,7 +19,7 @@ app.controller('editCtrl', ['$scope', '$window', function($scope, $window) {
 		theme: {
 			base: 'base/epiceditor.css',
 			preview: 'preview/github.css',
-			editor: 'editor/epic-dark.css'
+			editor: 'editor/epic-custom.css'
 		},
 		button: false,
 		focusOnLoad: true,

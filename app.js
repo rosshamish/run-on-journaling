@@ -22,6 +22,7 @@ var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
 var dustjs = require('adaro');
+var lessMiddleware = require('less-middleware');
 
 /**
  * Controllers (route handlers).
@@ -90,6 +91,7 @@ app.use(function(req, res, next) {
   if (/api/i.test(req.path)) req.session.returnTo = req.path;
   next();
 });
+app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 /**

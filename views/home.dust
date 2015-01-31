@@ -1,17 +1,1 @@
 {>"partials/layout"/}
-
-{! allow other pages to override sections !}
-{! with the less-than sign syntax !}
-
-{<title}Homepage{/title}
-
-{<page_id}index{/page_id}
-
-{<main}
-<h1> from home </h1>
-
-<p>this is overriding the default "main" in partials/layout</p>
-
-<input type="text" width="200px" height="200px"></input>
-
-{/main}
