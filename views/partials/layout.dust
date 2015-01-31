@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{+title}App name{/title}</title>
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
 <body>
 	{>"partials/navbar"/}
@@ -18,5 +17,8 @@
 	</div>
 
 	{>"partials/footer"/}
+
+	<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
 </body>
 </html>
