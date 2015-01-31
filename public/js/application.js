@@ -1,3 +1,1 @@
-$(document).ready(function() {
-	console.log('hello world!!!');
-});
+var app = angular.module('app', ['mgo-mousetrap']);

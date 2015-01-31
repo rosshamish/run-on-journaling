@@ -10,15 +10,20 @@
 	{>"partials/navbar"/}
 
 	<div class="some-container-CHANGETHIS">
-		{+main}
-		Page content here - the + says that this is the default content, 
-		which can(should) be overriden in files which include layout.dust
-		{/main}
+
+		{>"partials/editor"/}
+
 	</div>
+
 
 	{>"partials/footer"/}
 
 	<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular.js"></script>
+	<script type="text/javascript" src="js/lib/mousetrap.js"></script>
+	<script type="text/javascript" src="js/lib/wMousetrap.js"></script>
+	<script type="text/javascript" src="js/lib/epiceditor.js"></script>
+
 	<script type="text/javascript" src="js/application.js"></script>
 </body>
 </html>
