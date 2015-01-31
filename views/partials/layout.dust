@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-ng-app="app">
 <head>
 	<base href="/"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 <body>
 	{>"partials/navbar"/}
 
-	<div class="some-container-CHANGETHIS">
+	<div data-ng-controller="editCtrl" class="some-container-CHANGETHIS">
 
 		{>"partials/editor"/}
 
@@ -25,5 +25,7 @@
 	<script type="text/javascript" src="js/lib/epiceditor.js"></script>
 
 	<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/controllers/editCtrl.js"></script>
+
 </body>
 </html>
