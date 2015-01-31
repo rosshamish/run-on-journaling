@@ -1,0 +1,7 @@
+<div class="navbar-goes-here">
+	<h2> from partials/navbar </h2>
+	<ul>
+		<li> something </li>
+		<li> and another </li>
+	</ul>
+</div>
