@@ -6,8 +6,8 @@
 	<title>{+title}Home{/title} | Run-on Journaling</title>
 
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
-	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<link href="css/vendors/skeleton.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
