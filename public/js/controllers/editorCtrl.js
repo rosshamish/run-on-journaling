@@ -1,5 +1,9 @@
 app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 
+	/**
+	* Branch (textarea) switching
+	*/
+
 	$scope.branchIndex = 0;
 	$scope.maxBranchIndex = 0;
 
@@ -20,7 +24,7 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 	}
 
 	/**
-	Keybindings for desktop
+	* Branch-switching keybindings for desktop
 	*/
 
 	var map = [];
@@ -40,5 +44,24 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 			map = [];
 		}
 	}
+
+	/**
+	* HTML5 Local Storage
+	*/
+	var localStorageFilename = 'editor.content'
+	/* Retrieving */
+	// var autosave = localStorage.getItem(localStorageFilename);
+	// var text = JSON.parse(autosave);
+	// $(textareaIdentifier).val(text);
+
+	$scope.counter = 0;
+	$scope.autoSaveEditorContent = function() {
+		// This is to assure myself that
+		// the localStorage.setItem works
+		// localStorage.setItem(localStorageFilename,
+		// 	$scope.counter++);
+
+		console.log('model is ' + $scope.editorContent);
+	}	
 
 }]);
