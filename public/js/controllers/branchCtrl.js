@@ -1,4 +1,4 @@
-app.controller('branchCtrl', ['$scope', function($scope) {
+app.controller('branchCtrl', ['$scope', '$window', function($scope, $window) {
 
 	$scope.branchIndex = 0;
 	$scope.maxBranchIndex = 0;
@@ -9,7 +9,10 @@ app.controller('branchCtrl', ['$scope', function($scope) {
 	}
 
 	$scope.prevBranch = function() {
-		$scope.branchIndex = Math.max($scope.branchIndex - 1, 0);
+		$scope.branchIndex = $scope.branchIndex - 1;
+		if ($scope.branchIndex < 0) {
+			$window.location = '/#/listview';
+		}
 	}
 
 	$scope.range = function(n) {
