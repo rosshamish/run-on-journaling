@@ -2,6 +2,15 @@ var app = angular.module('app', ['mgo-mousetrap', 'ngTouch', 'ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
+	when('/', {
+		templateUrl: '/html/landing.html'
+	}).
+	when('/login', {
+		templateUrl: 'html/login.html'
+	}).
+	when('/register', {
+		templateUrl: 'html/register.html'
+	}).
 	when('/listview', {
   		templateUrl: '/html/listview.html',
   		controller: 'listviewCtrl'
@@ -10,6 +19,6 @@ app.config(['$routeProvider', function($routeProvider) {
     	templateUrl: '/html/editor.html',
     }).
  	otherwise({
-  		redirectTo: '/editor'
+  		redirectTo: '/html/landing.html'
   	});
 }])
