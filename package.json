@@ -61,7 +61,8 @@
     "yui": "^3.18.1",
     "dustjs-linkedin": "~2.5.1",
     "dustjs-helpers": "~1.5.0",
-    "less-middleware": "~1.0.4"
+    "less-middleware": "~1.0.4",
+    "connect-offline": "~1.0.4"
   },
   "devDependencies": {
     "blessed": "^0.0.37",

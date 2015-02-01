@@ -60,8 +60,8 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 	}
 
 	$scope.retrieveEditorContent = function() {
-		var autosave = localStorage.getItem(localStorageFilename);
-		$scope.editorContent = JSON.parse(autosave)[$scope.branchIndex];
+		var autosave = JSON.parse(localStorage[localStorageFilename] || '[]');
+		$scope.editorContent = autosave[$scope.branchIndex];
 	}
 
 }]);
