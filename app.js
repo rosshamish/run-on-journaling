@@ -93,6 +93,7 @@ app.use(function(req, res, next) {
   if (/api/i.test(req.path)) req.session.returnTo = req.path;
   next();
 });
+/*
 // app.use(offline({
 //   manifest_path: "/application.manifest",
 //   files: [
@@ -108,7 +109,7 @@ app.use(function(req, res, next) {
 //   ],
 //   network: ['/'],
 //   use_fs_watch: true
-// }));
+// })); */
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
