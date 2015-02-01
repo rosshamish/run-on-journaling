@@ -1,8 +1,5 @@
 app.controller('editCtrl', ['$scope', '$window', function($scope, $window) {
-	/***************************************************
-	Epic Editor
-	****************************************************
-	*/
+	
 	var opts = {
 		container: 'epiceditor',
 		textarea: null,
@@ -27,29 +24,5 @@ app.controller('editCtrl', ['$scope', '$window', function($scope, $window) {
 	}
 
 	var editor = new EpicEditor(opts).load();
-
-
-
-	/***********************************************
-	Mousetrap
-	************************************************
-	*/
-	$scope.toggle = [];
-	var index = 0;
-	$scope.toggle[0] = true;
-	$scope.toggle[1] = false;
-	$scope.toggle[2] = false;
-
-	$scope.increment = function() {
-		$scope.toggle[index] = false;
-		index = index + 1;
-		$scope.toggle[index] = true;
-	}
-
-	$scope.decrement = function() {
-		$scope.toggle[index] = false;
-		index = index - 1;
-		$scope.toggle[index] = true;
-	}
 
 }]);

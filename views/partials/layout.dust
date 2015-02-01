@@ -9,12 +9,16 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
-<body>
+
+<body data-ng-controller="branchCtrl" w-mousetrap="{'space+right': increment, 'space+left': decrement }">
+
+	{>"partials/branch"/}
+
 	<div data-ng-controller="editCtrl" class="some-container-CHANGETHIS">
-
 		{>"partials/editor"/}
-
 	</div>
+
+
 
 	<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="js/lib/angular.js"></script>
@@ -24,6 +28,7 @@
 
 	<script type="text/javascript" src="js/application.js"></script>
 	<script type="text/javascript" src="js/controllers/editCtrl.js"></script>
+	<script type="text/javascript" src="js/controllers/branchCtrl.js"></script>
 
 </body>
 </html>
