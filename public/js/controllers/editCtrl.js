@@ -15,7 +15,6 @@ app.controller('editCtrl', ['$scope', '$window', function($scope, $window) {
 		},
 		theme: {
 			base: 'base/epiceditor.css',
-			preview: 'preview/github.css',
 			editor: 'editor/epic-custom.css'
 		},
 		button: false,
