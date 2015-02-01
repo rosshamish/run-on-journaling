@@ -2,15 +2,18 @@
 <div ng-swipe-right="prevBranch()" ng-swipe-left="nextBranch()" ng-swipe-disable-mouse
 	 class="full-height-viewport-important" w-mousetrap="{'shift+left': prevBranch, 'shift+right': nextBranch}">
 
-	<div class="branch-container" ng-repeat="i in range(maxBranchIndex + 1) track by $index">
+	<div class="branch-container" ng-repeat="i in range(maxBranchIndex + 2) track by $index">
 
-		<!-- Right....will happen first -->
-		<textarea class="branch branch-left full-height-important" ng-show="$index === (branchIndex - 1)" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
+		<textarea class="branch branch-side branch-left full-height-important" readonly
+		ng-show="$index === (branchIndex - 1)"></textarea>
 
-		<textarea class="branch branch-main full-height-important" ng-show="$index === branchIndex" id="{{$index}}" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
+		<textarea class="branch branch-main full-height-important" id="{{$index}}" 
+		ng-init="retrieveEditorContent();" ng-show="$index === branchIndex"  
+		ng-model="$parent.editorContent" 
+		ng-change="$parent.autoSaveEditorContent($index)" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
 		
-		<!-- Left -->
-		<textarea class="branch branch-right full-height-important" ng-show="$index === (branchIndex + 1)" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
+		<textarea class="branch branch-side branch-right full-height-important" readonly
+		ng-show="$index === (branchIndex + 1)"></textarea>
 
 	</div>
 </div>
