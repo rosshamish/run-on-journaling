@@ -10,6 +10,7 @@
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
 	<link href="css/vendors/skeleton.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/vendors/jquery-ui.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -23,6 +24,7 @@
 	<script type="text/javascript" src="js/lib/angular-route.js"></script>
 	<script type="text/javascript" src="js/lib/shards.js"></script>
 	<script type="text/javascript" src="js/lib/angular-animate.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-ui.js"></script>
 
 
 	<script type="text/javascript" src="js/lib/mousetrap.js"></script>

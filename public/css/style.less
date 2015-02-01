@@ -89,12 +89,20 @@ img.centered {
 
 		display: block;
 
-		&.branch-side {
+		&.branch-right {
+			position: absolute;
+			float: left;
+			width: 15%;
+		}
+
+		&.branch-left {
+			position: absolute;
 			float: left;
 			width: 15%;
 		}
 
 		&.branch-main {
+			position: absolute;
 			float: left;
 			width: 70%;
 		}
@@ -103,65 +111,58 @@ img.centered {
 
 
 
-/*
-  We're using CSS transitions for when
-  the enter and move events are triggered
-  for the element that has the .branch-container
-  class
-*/
-.branch-container.ng-enter, .branch-container.ng-move {
-  -webkit-transition:0.5s linear all;
-  -moz-transition:0.5s linear all;
-  -o-transition:0.5s linear all;
-  transition:0.5s linear all;
-  opacity:0;
+.branch-container.ng-move {
+    position: relative;
+    top: 26px;
 }
 
-/*
- The ng-enter-active and ng-move-active
- are where the transition destination properties
- are set so that the animation knows what to
- animate.
-*/
-.branch-container.ng-enter.ng-enter-active,
 .branch-container.ng-move.ng-move-active {
-  opacity:1;
+    transition: all 0.5s ease;
+    top: 0;
 }
 
-/*
-  We're using CSS keyframe animations for when
-  the leave event is triggered for the element
-  that has the .branch-container class
-*/
+.branch-container.ng-move + div {
+    /* cannot have transition on this element */
+    /*transition: all 1s ease;*/
+    position: relative;
+    top: -26px;
+}
+
+.branch-container.ng-move.ng-move-active + div {
+    transition: all 0.5s ease;
+    position: relative;
+    top: 0;
+}
+
+.branch-container.ng-enter {
+    position: relative;
+    opacity: 0.0;
+    height: 0;
+    left: 100px;
+}
+
+.branch-container.ng-enter.ng-enter-active {
+    transition: all 0.5s ease;
+    opacity: 1.0;
+    left: 0;
+    height: 26px;
+}
+
+
 .branch-container.ng-leave {
-  -webkit-animation:0.5s my_animation;
-  -moz-animation:0.5s my_animation;
-  -o-animation:0.5s my_animation;
-  animation:0.5s my_animation;
+    position: relative;
+    opacity: 1.0;
+    left: 0;
+    height: 26px;
+    z-index: -100;
 }
 
-@keyframes my_animation {
-  from { opacity:1; }
-  to { opacity:0; }
-}
-
-/*
-  Unfortunately each browser vendor requires
-  its own definition of keyframe animation code...
-*/
-@-webkit-keyframes my_animation {
-  from { opacity:1; }
-  to { opacity:0; }
-}
-
-@-moz-keyframes my_animation {
-  from { opacity:1; }
-  to { opacity:0; }
-}
-
-@-o-keyframes my_animation {
-  from { opacity:1; }
-  to { opacity:0; }
+.branch-container.ng-leave.ng-leave-active {
+    transition: all 0.5s ease;
+    opacity: 0.0;
+    left: 100px;
+    height: 0;
+    top: -13px;
 }
 
 
