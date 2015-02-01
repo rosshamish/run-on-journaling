@@ -22,8 +22,7 @@ app.controller('editCtrl', ['$scope', '$window', function($scope, $window) {
 			editor: 'editor/epic-custom.css'
 		},
 		button: false,
-		focusOnLoad: true,
-		autogrow: false
+		focusOnLoad: true
 	}
 
 	var editor = new EpicEditor(opts).load();
