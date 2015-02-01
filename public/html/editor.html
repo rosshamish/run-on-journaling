@@ -4,11 +4,11 @@
 
 	<div class="branch-container" ng-repeat="i in range(maxBranchIndex + 1) track by $index">
 
-		<textarea class="branch left-float" ng-show="$index === branchIndex" id="{{$index}}" class="full-height-important" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
+		<textarea class="branch branch-side full-height-important" id="{{$index}}" ng-show="$index === (branchIndex - 1)" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
 
-		<textarea class="branch center" id="{{$index}}" ng-show="$index === (branchIndex - 1)" class="full-height-important" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
+		<textarea class="branch branch-main full-height-important" ng-show="$index === branchIndex" id="{{$index}}" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
 		
-		<textarea class="branch right-float" id="{{$index}}" ng-show="$index === (branchIndex + 1)" class="full-height-important" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
+		<textarea class="branch branch-side full-height-important" id="{{$index}}" ng-show="$index === (branchIndex + 1)" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
 
 	</div>
 </div>

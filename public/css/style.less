@@ -50,7 +50,7 @@ img.centered {
 .pristine-textarea {
 	margin: 0;
 	margin-bottom: -7px;
-	padding: 5vh 8vw;
+	padding: 2rem 2rem;
 	border: none;
 	outline: none;
 	-webkit-box-shadow: none;
@@ -70,52 +70,35 @@ img.centered {
 
 .branch-container {
 	.scale-textarea-bg-color(1, 300, @color-paper-base);
-}
-
-textarea.branch {
-	.pristine-textarea;
-	white-space: nowrap;
 	width: 100%;
-	max-width: 100%;
-	min-height: 100vh;
-	background-color: @color-paper-base;
 
-	color: @color-black;
-	font-size: 1.5rem;
-	line-height: 1.6;
-	@media (min-width: 550px) {
-		font-size: 2.0rem;
+	textarea.branch {
+		.pristine-textarea;
+		white-space: nowrap;
+		width: 100%;
+		max-width: 100%;
+		min-height: 100vh;
+		background-color: @color-paper-base;
+
+		color: @color-black;
+		font-size: 1.5rem;
+		line-height: 1.6;
+		@media (min-width: 550px) {
+			font-size: 2.0rem;
+		}
+
+		display: block;
+
+		&.branch-side {
+			float: left;
+			width: 15%;
+		}
+
+		&.branch-main {
+			float: left;
+			width: 70%;
+		}
 	}
-}
-
-div.left-float {
-	margin-left: 0vh;
-}
-
-div.left-float {
-	margin-right: 0vh;
-}
-
-div.center {
-	display: block;
-	margin-left: auto;
-    margin-right: auto;
-}
-
-
-.example-animate-container {
-  background:white;
-  border:1px solid black;
-  list-style:none;
-  margin:0;
-  padding:0 10px;
-}
-
-.branch-container {
-  width: 30%;
-  line-height:40px;
-  list-style:none;
-  box-sizing:border-box;
 }
 
 .branch-container.ng-move,
