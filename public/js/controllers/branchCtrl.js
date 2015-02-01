@@ -11,8 +11,8 @@ app.controller('branchCtrl', ['$scope', '$window', '$timeout', function($scope, 
 		jq.animate({"left": "-=15%"}, "slow");
 	}
 
-	function moveRightMain(jq) {
-		jq.animate({"left": "-=55%"});
+	function moveNextMain(jq) {
+		jq.animate({"left": "-=55%"}, "slow");
 	}
 
 	function moveMainRight(jq) {
@@ -20,16 +20,29 @@ app.controller('branchCtrl', ['$scope', '$window', '$timeout', function($scope, 
 	}
 
 
+	// Stepping forward...
+	// Move the middle to the left (done)
+	// Put a new one in the middle
 	$scope.nextBranch = function() {
 
-		moveMainLeft($('.branch-main'));
+		var main = $('.branch-main');
+		main.position.right = '15%';
+		moveMainLeft(main);
+
+		$timeout(function() {
+			$scope.branchIndex++;
+			$scope.maxBranchIndex = Math.max($scope.branchIndex, $scope.maxBranchIndex);
+
+			var nextMain = $('.branch-main');
+			nextMain.position.right = '15%';
+			moveNextMain(nextMain);
+
+		}, 1000);
+
+
 		// moveLeftLeft($('.branch-left'));
 		// moveRightMain($('.branch-right'));
 
-		// $timeout(function() {
-		// 	$scope.branchIndex++;
-		// 	$scope.maxBranchIndex = Math.max($scope.branchIndex, $scope.maxBranchIndex);
-		// }, 1000);
 
 	}
 
@@ -39,7 +52,7 @@ app.controller('branchCtrl', ['$scope', '$window', '$timeout', function($scope, 
 		//moveMainRight($('.branch-side'));
 
 		//$timeout(500);
-		$scope.branchIndex = $scope.branchIndex - 1;
+		//$scope.branchIndex = $scope.branchIndex - 1;
 
 
 		if ($scope.branchIndex < 0) {
