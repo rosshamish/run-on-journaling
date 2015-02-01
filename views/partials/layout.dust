@@ -2,7 +2,7 @@
 <html lang="en" data-ng-app="app">
 <head>
 	<base href="/"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<title>{+title}Home{/title} | Run-on Journaling</title>
 
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
@@ -14,7 +14,7 @@
 
 	{>"partials/branch"/}
 
-	<div data-ng-controller="editCtrl" class="some-container-CHANGETHIS">
+	<div data-ng-controller="editCtrl" class="full-height-viewport-important">
 		{>"partials/editor"/}
 	</div>
 
