@@ -21,6 +21,6 @@ app.controller('editCtrl', ['$scope', '$window', function($scope, $window) {
 		focusOnLoad: true
 	}
 
-	var editor = new EpicEditor(opts).load();
+	// var editor = new EpicEditor(opts).load();
 
 }]);

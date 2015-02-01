@@ -10,15 +10,20 @@
 
 </head>
 
-<body data-ng-controller="branchCtrl" w-mousetrap="{'space+right': increment, 'space+left': decrement }">
+<body ng-controller="branchCtrl" w-mousetrap="{'space+right': nextBranch, 'space+left': prevBranch }">
 
 	<div id="branch-title" class="branch-title">{{ branchIndex }}</div>
 
-	<div data-ng-controller="editCtrl" class="full-height-viewport-important">
-		<div id="epiceditor" class="full-height-important"></div>
+	<div ng-repeat="i in range(maxBranchIndex + 1) track by $index"
+	     ng-swipe-left="prevBranch()" ng-swipe-right="nextBranch()">
+		<div ng-show="$index === branchIndex" class="full-height-viewport-important">
+		     
+			<textarea readonly id="{{index}}" class="full-height-important">
+				{{ $index }}
+			</textarea>
+
+		</div>
 	</div>
-
-
 
 	<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="js/lib/angular.js"></script>
