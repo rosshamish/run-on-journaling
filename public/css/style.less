@@ -3,7 +3,7 @@
  * ------------------------------------- */
 @color-white: #fff;
 @color-black: #000;
-@color-paper-yellow-base: #ffffda;
+@color-paper-base: rgba(255, 227, 0, 0.2);
 
 /* -------------------------------------
  *      Landing Page
@@ -39,45 +39,46 @@ img.centered {
  *        Text editing
  * ------------------------------------- */
 
-html {
-	padding: 1vh;
-}
-
 .full-height-viewport-important {
-	height: 90vh !important;
+	height: 100vh !important;
 }
 
 .full-height-important {
 	height: 100% !important;
 }
 
-.kill-textarea-effects {
+.pristine-textarea {
+	margin: 0;
+	margin-bottom: -7px;
+	padding: 5vh 8vh;
 	border: none;
 	outline: none;
 	-webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
+@angles-per-swipe: 67;
 .scale-textarea-bg-color(@idx, @to, @baseColor) when(@idx =< @to){
-    &:nth-child(@{idx}) {
-    	textarea.branch {
-        	background-color: darken(@baseColor, @idx*5);
-        }
-    }
-    .scale-textarea-bg-color(@idx + 1, @to, @baseColor);
+	&:nth-child(@{idx}) {
+		textarea.branch {
+			background-color: spin(@baseColor, @idx*@angles-per-swipe);
+		}
+	}
+	.scale-textarea-bg-color(@idx + 1, @to, @baseColor);
 }
 
 .branch-container {
-	.scale-textarea-bg-color(1, 50, @color-paper-yellow-base);
+	.scale-textarea-bg-color(1, 300, @color-paper-base);
 }
 
 textarea.branch {
-	.kill-textarea-effects;
-	width: 99%;
-	max-width: 99%;
-	min-height: 99vh;
+	.pristine-textarea;
+	width: 100%;
+	max-width: 100%;
+	min-height: 100vh;
 
+	background-color: @color-paper-base;
 	color: @color-black;
 }
 
