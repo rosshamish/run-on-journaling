@@ -1,4 +1,9 @@
 app.controller('branchCtrl', ['$scope', '$window', function($scope, $window) {
+
+	$($window).on("swipe", function()  {
+		$window.alert("swipped.");
+	})
+
 	var index = 0;
 	$scope.branches = ['thoughts', 'ideas', 'school', 'notes'];
 	$scope.currentBranch = $scope.branches[index];
