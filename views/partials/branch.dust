@@ -1,1 +1,1 @@
-<div id="branch-title" class="branch-title">{{ currentBranch }}</div>
+<div id="branch-title" class="branch-title">{{ branchIndex }}</div>

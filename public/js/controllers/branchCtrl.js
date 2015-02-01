@@ -1,37 +1,13 @@
-app.controller('branchCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('branchCtrl', ['$scope', '$window', function($scope, window) {
 
-	$($window).on("swipe", function()  {
-		$window.alert("swipped.");
-	})
+	$scope.branchIndex = 0;
 
-	var index = 0;
-	$scope.branches = ['thoughts', 'ideas', 'school', 'notes'];
-	$scope.currentBranch = $scope.branches[index];
-
-
-	$scope.increment = function() {
-		index ++;
-		checkBounds();
-		updateCurrentBranch();
+	$scope.nextBranch = function() {
+		$scope.branchIndex++;
 	}
 
-	$scope.decrement = function() {
-		index --;
-		checkBounds();
-		updateCurrentBranch();
-	}
-
-	var checkBounds = function() {
-		if (index >= $scope.branches.length) {
-			index = $scope.branches.length - 1;
-		}
-		if (index <= -1) {
-			index = 0;
-		}
-	}
-
-	var updateCurrentBranch = function() {
-		$scope.currentBranch = $scope.branches[index];
+	$scope.prevBranch = function() {
+		$scope.branchIndex = Math.max($scope.branchIndex - 1, 0);
 	}
 
 }]);

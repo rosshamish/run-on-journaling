@@ -1,1 +1,1 @@
-var app = angular.module('app', ['mgo-mousetrap']);
+var app = angular.module('app', ['mgo-mousetrap', 'ngTouch']);
