@@ -8,13 +8,13 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 	$scope.maxBranchIndex = 0;
 
 	$scope.nextBranch = function() {
-		$('.branch-main').animate({
-			left: "0px",
-			width: "15%"
-		}, function() {
-			console.log('done animating');
-			$scope.branchIndex++;
-		});
+		// $('.branch-main').animate({
+		// 	left: "0px",
+		// 	width: "15%"
+		// }, function() {
+		// 	console.log('done animating');
+		// 	$scope.branchIndex++;
+		// });
 
 		$scope.branchIndex++;
 		$scope.retrieveEditorContent();
@@ -53,25 +53,6 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 			$scope.nextBranch();
 			map = [];
 		}
-	}
-
-	/**
-	* Branch-switching animations
-	*/
-	function moveMainLeft(jq) {
-		jq.animate({ "left": "-=55%" }, "slow" );
-	}
-
-	function moveLeftLeft(jq) {
-		jq.animate({"left": "-=15%"}, "slow");
-	}
-
-	function moveNextMain(jq) {
-		jq.animate({"left": "-=55%"}, "slow");
-	}
-
-	function moveMainRight(jq) {
-		jq.animate({'left':'+=30%'}, "slow" );
 	}
 
 	/**
