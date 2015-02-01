@@ -12,7 +12,7 @@ app.config(['$routeProvider', function($routeProvider) {
 	}).
 	when('/editor', {
 		templateUrl: '/html/editor.html',
-		controller: 'branchCtrl'
+		controller: 'editorCtrl'
 	}).
 	otherwise({
 		redirectTo: '/html/landing.html'
