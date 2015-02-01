@@ -1,5 +1,5 @@
 
-<div ng-swipe-right="prevBranch()" ng-swipe-left="nextBranch()"
+<div ng-swipe-right="prevBranch()" ng-swipe-left="nextBranch()" ng-swipe-disable-mouse
 	 class="full-height-viewport-important" w-mousetrap="{'space+left': prevBranch, 'space+right': nextBranch}">
 	<div class="branch-container" ng-repeat="i in range(maxBranchIndex + 1) track by $index">
 		<div ng-show="$index === branchIndex">
