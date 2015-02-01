@@ -7,11 +7,19 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 	$scope.branchIndex = 0;
 	$scope.maxBranchIndex = 0;
 
-	function doTransitions(transitions) {
+	function doTransitions(transitions, elementFromTo) {
 		transitions.forEach(function(pair) {
 			var from = pair[0],
 				to   = pair[1];
 			$('.branch'+from).switchClass('branch'+from, 'branch'+to, function() {
+				console.log(from + ' to ' + to);
+			})
+		});
+		elementFromTo.forEach(function(triplet) {
+			var $el  = triplet[0],
+				from = triplet[1],
+				to   = triplet[2];
+			$el.switchClass(from, to, function() {
 				console.log(from + ' to ' + to);
 			})
 		});
@@ -20,9 +28,9 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 		var right_to_left = [
 			['-right', '-main'],
 			['-main', '-left'],
-			['-left', '']
+			['-left', '-waay-left-there']
 		];
-		doTransitions(right_to_left);
+		doTransitions(right_to_left, [[$('.branch-right').next(), '', 'branch-right']]);
 
 		$scope.branchIndex++;
 		$scope.retrieveEditorContent();
@@ -33,9 +41,9 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 		var left_to_right = [
 			['-left', '-main'],
 			['-main', '-right'],
-			['-right', '']
+			['-right', '-waay-right-there']
 		];
-		doTransitions(left_to_right);
+		doTransitions(left_to_right, [[$('.branch-left').prev(), '', 'branch-left']]);
 
 		$scope.branchIndex--;
 		$scope.retrieveEditorContent();
