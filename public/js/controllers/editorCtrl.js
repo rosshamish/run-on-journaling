@@ -1,4 +1,4 @@
-app.controller('branchCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 
 	$scope.branchIndex = 0;
 	$scope.maxBranchIndex = 0;

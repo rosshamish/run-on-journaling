@@ -1,9 +1,12 @@
 
 <div ng-swipe-right="prevBranch()" ng-swipe-left="nextBranch()" ng-swipe-disable-mouse
 	 class="full-height-viewport-important" w-mousetrap="{'space+left': prevBranch, 'space+right': nextBranch}">
-	<div class="branch-container" ng-repeat="i in range(maxBranchIndex + 1) track by $index">
-		<div ng-show="$index === branchIndex">
-			<textarea class="branch" id="{{$index}}" class="full-height-important" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
-		</div>
+
+	<div class="branch-container" ng-repeat="i in range(maxBranchIndex + 3) track by $index">
+		<textarea class="branch branch-side full-height-important" id="{{$index}}" ng-show="$index === (branchIndex - 1)" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
+
+		<textarea class="branch branch-main full-height-important" ng-show="$index === branchIndex" id="{{$index}}" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
+		
+		<textarea class="branch branch-side full-height-important" id="{{$index}}" ng-show="$index === (branchIndex + 1)" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
 	</div>
 </div>

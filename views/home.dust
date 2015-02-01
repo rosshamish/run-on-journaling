@@ -22,12 +22,14 @@
 	<script type="text/javascript" src="js/lib/angular-touch.js"></script>
 	<script type="text/javascript" src="js/lib/angular-route.js"></script>
 	<script type="text/javascript" src="js/lib/shards.js"></script>
+	<script type="text/javascript" src="js/lib/angular-animate.js"></script>
+
 
 	<script type="text/javascript" src="js/lib/mousetrap.js"></script>
 	<script type="text/javascript" src="js/lib/wMousetrap.js"></script>
 
 	<script type="text/javascript" src="js/application.js"></script>
-	<script type="text/javascript" src="js/controllers/branchCtrl.js"></script>
+	<script type="text/javascript" src="js/controllers/editorCtrl.js"></script>
 	<script type="text/javascript" src="js/controllers/listviewCtrl.js"></script>
 
 </body>
