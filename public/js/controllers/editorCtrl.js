@@ -7,14 +7,22 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 	$scope.branchIndex = 0;
 	$scope.maxBranchIndex = 0;
 
+	function doTransitions(transitions) {
+		transitions.forEach(function(pair) {
+			var from = pair[0],
+				to   = pair[1];
+			$('.branch'+from).switchClass('branch'+from, 'branch'+to, function() {
+				console.log(from + ' to ' + to);
+			})
+		});
+	}
 	$scope.nextBranch = function() {
-		// $('.branch-main').animate({
-		// 	left: "0px",
-		// 	width: "15%"
-		// }, function() {
-		// 	console.log('done animating');
-		// 	$scope.branchIndex++;
-		// });
+		var right_to_left = [
+			['-right', '-main'],
+			['-main', '-left'],
+			['-left', '']
+		];
+		doTransitions(right_to_left);
 
 		$scope.branchIndex++;
 		$scope.retrieveEditorContent();
@@ -22,6 +30,13 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 	}
 
 	$scope.prevBranch = function() {
+		var left_to_right = [
+			['-left', '-main'],
+			['-main', '-right'],
+			['-right', '']
+		];
+		doTransitions(left_to_right);
+
 		$scope.branchIndex--;
 		$scope.retrieveEditorContent();
 		if ($scope.branchIndex < 0) {

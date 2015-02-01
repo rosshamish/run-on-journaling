@@ -4,9 +4,8 @@
 
 	<div class="branch-container">
 
-		<textarea id="{{$index}}" class="branch full-height-important"
+		<textarea id="{{$index}}" class="branch branch-main full-height-important"
 		ng-repeat="i in range(maxBranchIndex + 1) track by $index"
-		ng-class="{'branch-main': ($index === branchIndex), 'branch-left': ($index === (branchIndex-1)), 'branch-right': ($index === (branchIndex+1))}"
 		ng-init="retrieveEditorContent();"
 		ng-model="$parent.editorContent"
 		ng-change="$parent.autoSaveEditorContent($index)" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
