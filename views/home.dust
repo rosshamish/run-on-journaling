@@ -11,7 +11,7 @@
 
 </head>
 
-<body ng-controller="branchCtrl" w-mousetrap="{'space+right': nextBranch, 'space+left': prevBranch }">
+<body>
 
 	<div ng-view></div>
 

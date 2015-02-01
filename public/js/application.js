@@ -8,7 +8,6 @@ app.config(['$routeProvider', function($routeProvider) {
     }).
     when('/editor', {
     	templateUrl: '/html/editor.html',
-    	controller: 'editCtrl'
     }).
  	otherwise({
   		redirectTo: '/editor'
