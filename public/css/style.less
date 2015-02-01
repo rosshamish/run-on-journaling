@@ -50,7 +50,7 @@ img.centered {
 .pristine-textarea {
 	margin: 0;
 	margin-bottom: -7px;
-	padding: 5vh 8vh;
+	padding: 5vh 8vw;
 	border: none;
 	outline: none;
 	-webkit-box-shadow: none;
@@ -77,8 +77,12 @@ textarea.branch {
 	width: 100%;
 	max-width: 100%;
 	min-height: 100vh;
-
 	background-color: @color-paper-base;
 	color: @color-black;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	@media (min-width: 550px) {
+		font-size: 2.0rem;
+	}
 }
 
