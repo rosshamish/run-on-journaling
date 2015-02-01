@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-ng-app="app">
+<html manifest="application.manifest" lang="en" data-ng-app="app">
 <head>
 	<base href="/"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-	<title>Run-on Journaling</title>
+	<title></title>
 
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
 	<link href="css/vendors/skeleton.css" rel="stylesheet" type="text/css">
@@ -21,7 +21,6 @@
 	<script type="text/javascript" src="js/lib/angular.js"></script>
 	<script type="text/javascript" src="js/lib/angular-touch.js"></script>
 	<script type="text/javascript" src="js/lib/angular-route.js"></script>
-	<script type="text/javascript" src="js/lib/shards.js"></script>
 	<script type="text/javascript" src="js/lib/angular-animate.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-ui.js"></script>
 
