@@ -28,12 +28,14 @@ app.controller('branchCtrl', ['$scope', '$window', function($scope, $window) {
 	$scope.checkCode = function($event) {
 		map[$event.keyCode] = $event.type == 'keydown';
 
-		if (map[32] && map[39]) {
+		// left
+		if (map[16] && map[37]) {
 			$scope.prevBranch();
 			map = [];
 		}
 
-		if (map[32] && map[37]) {
+		// right
+		if (map[16] && map[39]) {
 			$scope.nextBranch();
 			map = [];
 		}
