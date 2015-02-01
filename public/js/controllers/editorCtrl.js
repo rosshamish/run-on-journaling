@@ -9,11 +9,13 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 
 	$scope.nextBranch = function() {
 		$scope.branchIndex++;
+		$scope.retrieveEditorContent();
 		$scope.maxBranchIndex = Math.max($scope.branchIndex, $scope.maxBranchIndex);
 	}
 
 	$scope.prevBranch = function() {
-		$scope.branchIndex = $scope.branchIndex - 1;
+		$scope.branchIndex--;
+		$scope.retrieveEditorContent();
 		if ($scope.branchIndex < 0) {
 			$window.location = '/#/listview';
 		}
@@ -49,19 +51,17 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 	* HTML5 Local Storage
 	*/
 	var localStorageFilename = 'editor.content'
-	/* Retrieving */
-	// var autosave = localStorage.getItem(localStorageFilename);
-	// var text = JSON.parse(autosave);
-	// $(textareaIdentifier).val(text);
 
-	$scope.counter = 0;
-	$scope.autoSaveEditorContent = function() {
-		// This is to assure myself that
-		// the localStorage.setItem works
-		// localStorage.setItem(localStorageFilename,
-		// 	$scope.counter++);
+	// $scope.editorContent;
+	$scope.autoSaveEditorContent = function(index) {
+		editorContent = JSON.parse(localStorage[localStorageFilename] || '[]');
+		editorContent[index] = $scope.editorContent;
+		localStorage.setItem(localStorageFilename, JSON.stringify(editorContent));
+	}
 
-		console.log('model is ' + $scope.editorContent);
-	}	
+	$scope.retrieveEditorContent = function() {
+		var autosave = localStorage.getItem(localStorageFilename);
+		$scope.editorContent = JSON.parse(autosave)[$scope.branchIndex];
+	}
 
 }]);
