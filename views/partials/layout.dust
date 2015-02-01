@@ -13,17 +13,34 @@
 
 <body data-ng-controller="branchCtrl" w-mousetrap="{'space+right': increment, 'space+left': decrement }">
 
-	<div ng-view></div>
+
+<div class="container absolute-center" data-ng-controller="listviewCtrl">
+
+	<div class="row" data-ng-repeat="list in lists">
+		<button class="six columns button-primary" data-ng-bind="list"></button>
+	</div>
+
+</div>
+
+
+{! 	{>"partials/branch"/}
+
+	<div data-ng-controller="editCtrl" class="full-height-viewport-important">
+		{>"partials/editor"/}
+	</div>
+
+	<button id="test-button">Hello</button> !}
+
+
 
 	<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="js/lib/angular.js"></script>
-	<script type="text/javascript" src="js/lib/angular-touch.js"></script>
-	<script type="text/javascript" src="js/lib/angular-route.js"></script>
-	<script type="text/javascript" src="js/lib/shards.js"></script>
+	<script type="text/javascript" src="js/lib/jquery.mobile-1.4.5.js"></script>
 
+	<script type="text/javascript" src="js/lib/angular.js"></script>
 	<script type="text/javascript" src="js/lib/mousetrap.js"></script>
 	<script type="text/javascript" src="js/lib/wMousetrap.js"></script>
 	<script type="text/javascript" src="js/lib/epiceditor.js"></script>
+	<script type="text/javascript" src="js/lib/shards.js"></script>
 
 	<script type="text/javascript" src="js/application.js"></script>
 	<script type="text/javascript" src="js/controllers/editCtrl.js"></script>
