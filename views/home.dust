@@ -12,16 +12,16 @@
 
 <body ng-controller="branchCtrl" w-mousetrap="{'space+right': nextBranch, 'space+left': prevBranch }">
 
-	<div id="branch-title" class="branch-title">{{ branchIndex }}</div>
+	<div ng-swipe-right="prevBranch()" ng-swipe-left="nextBranch()"
+	     class="full-height-viewport-important">
+		<div class="branch-container" ng-repeat="i in range(maxBranchIndex + 1) track by $index">
+			<div ng-show="$index === branchIndex">
 
-	<div ng-repeat="i in range(maxBranchIndex + 1) track by $index"
-	     ng-swipe-left="prevBranch()" ng-swipe-right="nextBranch()">
-		<div ng-show="$index === branchIndex" class="full-height-viewport-important">
-		     
-			<textarea readonly id="{{index}}" class="full-height-important">
-				{{ $index }}
-			</textarea>
+				<textarea class="branch" id="{{index}}" class="full-height-important">
+					{{ $index }}'s content
+				</textarea>
 
+			</div>
 		</div>
 	</div>
 
