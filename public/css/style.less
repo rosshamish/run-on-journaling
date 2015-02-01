@@ -74,6 +74,7 @@ img.centered {
 
 textarea.branch {
 	.pristine-textarea;
+	white-space: nowrap;
 	width: 100%;
 	max-width: 100%;
 	min-height: 100vh;
@@ -85,6 +86,57 @@ textarea.branch {
 	@media (min-width: 550px) {
 		font-size: 2.0rem;
 	}
+}
+
+div.left-float {
+	margin-left: 0vh;
+}
+
+div.left-float {
+	margin-right: 0vh;
+}
+
+div.center {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+
+.example-animate-container {
+  background:white;
+  border:1px solid black;
+  list-style:none;
+  margin:0;
+  padding:0 10px;
+}
+
+.branch-container {
+  width: 30%;
+  line-height:40px;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.branch-container.ng-move,
+.branch-container.ng-enter,
+.branch-container.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.branch-container.ng-leave.ng-leave-active,
+.branch-container.ng-move,
+.branch-container.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.branch-container.ng-leave,
+.branch-container.ng-move.ng-move-active,
+.branch-container.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
 }
 
 
