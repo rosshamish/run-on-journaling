@@ -23,7 +23,6 @@
 
 	<script type="text/javascript" src="js/lib/mousetrap.js"></script>
 	<script type="text/javascript" src="js/lib/wMousetrap.js"></script>
-	<script type="text/javascript" src="js/lib/epiceditor.js"></script>
 
 	<script type="text/javascript" src="js/application.js"></script>
 	<script type="text/javascript" src="js/controllers/branchCtrl.js"></script>
