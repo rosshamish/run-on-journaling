@@ -11,7 +11,7 @@
 
 </head>
 
-<body data-ng-controller="branchCtrl" w-mousetrap="{'space+right': increment, 'space+left': decrement }">
+<body ng-controller="branchCtrl" w-mousetrap="{'space+right': nextBranch, 'space+left': prevBranch }">
 
 	<div ng-view></div>
 
@@ -26,7 +26,6 @@
 	<script type="text/javascript" src="js/lib/epiceditor.js"></script>
 
 	<script type="text/javascript" src="js/application.js"></script>
-	<script type="text/javascript" src="js/controllers/editCtrl.js"></script>
 	<script type="text/javascript" src="js/controllers/branchCtrl.js"></script>
 	<script type="text/javascript" src="js/controllers/listviewCtrl.js"></script>
 
