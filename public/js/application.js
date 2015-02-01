@@ -1,4 +1,4 @@
-var app = angular.module('app', ['mgo-mousetrap', 'ngTouch', 'ngRoute']);
+var app = angular.module('app', ['mgo-mousetrap', 'ngTouch', 'ngRoute', 'ngAnimate']);
 
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
