@@ -1,5 +1,5 @@
-app.controller('listviewCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('listviewCtrl', ['$scope', '$window', 'listService', function($scope, $window, listService) {
 
-	$scope.lists = ['hackathon idea', 'yesterday on the bus', 'a smart thing rob winters said'];
+	$scope.lists = listService.getListList();
 
 }]);

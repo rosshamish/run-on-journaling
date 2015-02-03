@@ -1,4 +1,4 @@
-app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('editorCtrl', ['$scope', '$window', 'listService', function($scope, $window, listService) {
 
 	/**
 	* Branch (textarea) switching
@@ -81,18 +81,30 @@ app.controller('editorCtrl', ['$scope', '$window', function($scope, $window) {
 	/**
 	* HTML5 Local Storage
 	*/
-	var localStorageFilename = 'editor.content'
+	var listLabel = null;
+
+	// So other branches have some awareness of their context
+	var updateLabel = function() {
+		listLabel = $scope.editorContent.substring(0,5);
+	}
 
 	// $scope.editorContent;
-	$scope.autoSaveEditorContent = function(index) {
-		editorContent = JSON.parse(localStorage[localStorageFilename] || '[]');
-		editorContent[index] = $scope.editorContent;
-		localStorage.setItem(localStorageFilename, JSON.stringify(editorContent));
+	$scope.autoSaveEditorContent = function() {
+		if ($scope.branchIndex === 0) {
+
+			listService.addList($scope.editorContent);
+
+			updateLabel();
+
+		} else {
+			listService.updateData(listLabel, $scope.editorContent, $scope.branchIndex);
+
+		}
 	}
 
 	$scope.retrieveEditorContent = function() {
-		var autosave = JSON.parse(localStorage[localStorageFilename] || '[]');
-		$scope.editorContent = autosave[$scope.branchIndex];
+		console.log($scope.branchIndex);
+		$scope.editorContent = listService.getDataAtIndex(listLabel, $scope.branchIndex);
 	}
 
 }]);

@@ -8,7 +8,7 @@
 		ng-repeat="i in range(maxBranchIndex + 1) track by $index"
 		ng-init="retrieveEditorContent();"
 		ng-model="$parent.editorContent"
-		ng-change="$parent.autoSaveEditorContent($index)" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
+		ng-change="$parent.autoSaveEditorContent()" ng-keydown="checkCode($event)" ng-keyup="checkCode($event)"></textarea>
 
 	</div>
 </div>
