@@ -1,4 +1,4 @@
-![run-on-journanling icon](http://i.imgur.com/zshXcAi.png) Eureka/Fold
+![run-on-journanling icon](http://i.imgur.com/zshXcAi.png) Eureka / Fold
 =================
 
 ##### Idea capture for racing minds / Foldable stories
