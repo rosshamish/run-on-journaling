@@ -1,81 +1,40 @@
-![Run-on Journaling Header](public/images/readme-header.png)
+![run-on-journanling icon](http://i.imgur.com/zshXcAi.png) Eureka/Fold
 =================
 
-A swipe-happy, pedal-to-the-metal note taking experience on all your favorite mobile devices.
+##### Idea capture for racing minds / Foldable stories
 
+<hr />
 
-Table of Contents
+A prototype built in 24h for the [University of Alberta Computer Engineering Club's 2015 Hackathon](http://hackathon.compeclub.com/).
+
+Eureka/Fold is a mobile-first note-taking web app. 
+
+**Demo**: [http://eurekafold.herokuapp.com]()
+
+On mobile: swipe right-to-left for more detail, other way for less.  
+Otherwise: use shift+right for more detail, other way for less.
+
+When you're capturing an idea, it's **Eureka**. 
+
+When you're reading a story, it's **Fold**.
+
+> Authors: [Andrew Hoskins](https://github.com/ahoskins), [Ross Anderson](https://github.com/rosshamish)
+
+Using
+-----
+
+- HTML5 LocalStorage for on-device no-signup storage
+- HTML5 ApplicationCache for offline access
+- [Node.js](http://nodejs.org/) + [Express](http://expressjs.com/) for the web server
+- [Angular.js](https://angularjs.org/) for data binding and client-side templating
+- [Less](http://lesscss.org/) for CSS preprocessing
+
+Set it up locally
 -----------------
 
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [FAQ](#faq)
-- [Contributing](#contributing)
-- [License](#license)
-
-Features
---------
-
-
-Prerequisites
--------------
-
-- [MongoDB](http://www.mongodb.org/downloads)
-- [Node.js](http://nodejs.org)
-- Command Line Tools
- - <img src="http://deluge-torrent.org/images/apple-logo.gif" height="17">&nbsp;**Mac OS X**: [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (or **OS X 10.9 Mavericks**: `xcode-select --install`)
- - <img src="http://dc942d419843af05523b-ff74ae13537a01be6cfec5927837dcfe.r14.cf1.rackcdn.com/wp-content/uploads/windows-8-50x50.jpg" height="17">&nbsp;**Windows**: [Visual Studio](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8)
- - <img src="https://lh5.googleusercontent.com/-2YS1ceHWyys/AAAAAAAAAAI/AAAAAAAAAAc/0LCb_tsTvmU/s46-c-k/photo.jpg" height="17">&nbsp;**Ubuntu**: `sudo apt-get install build-essential`
- - <img src="http://i1-news.softpedia-static.com/images/extra/LINUX/small/slw218news1.png" height="17">&nbsp;**Fedora**: `sudo yum groupinstall "Development Tools"`
- - <img src="https://en.opensuse.org/images/b/be/Logo-geeko_head.png" height="17">&nbsp;**OpenSUSE**: `sudo zypper install --type pattern devel_basis`
-
-Getting Started
----------------
-
-
-
-Project Structure
------------------
-
-| Name                               | Description                                                 |
-| ---------------------------------- |:-----------------------------------------------------------:|
-| **config**/passport.js             | Passport Local and OAuth strategies, plus login middleware. |
-| **config**/secrets.js              | Your API keys, tokens, passwords and database URL.          |
-| **controllers**/api.js             | Controller for /api route and all api examples.             |
-| **controllers**/contact.js         | Controller for contact form.                                |
-| **controllers**/home.js            | Controller for home page (index).                           |
-| **controllers**/user.js            | Controller for user account management.                     |
-| **models**/User.js                 | Mongoose schema and model for User.                         |
-| **public**/                        | Static assets (fonts, css, js, img).                        |
-| **public**/**js**/application.js   | Specify client-side JavaScript dependencies.                |
-| **public**/**js**/main.js          | Place your client-side JavaScript here.                     |
-| **public**/**css**/styles.less     | Main stylesheet for your app.                               |
-| **public/css/themes**/default.less | Some Bootstrap overrides to make it look prettier.          |
-| **views/account**/                 | Templates for *login, password reset, signup, profile*.     |
-| **views/api**/                     | Templates for API Examples.                                 |
-| **views/partials**/flash.jade      | Error, info and success flash notifications.                |
-| **views/partials**/navigation.jade | Navbar partial template.                                    |
-| **views/partials**/footer.jade     | Footer partial template.                                    |
-| **views**/layout.jade              | Base template.                                              |
-| **views**/home.jade                | Home page template.                                         |
-| app.js                             | Main application file.                                      |
-| setup.js                       | Tool for removing authentication providers and other things.|
-
-**Note:** There is no preference how you name or structure your views.
-You could place all your templates in a top-level `views` directory without
-having a nested folder structure, if that makes things easier for you.
-Just don't forget to update `extends ../layout`  and corresponding
-`res.render()` paths in controllers.
-
-FAQ
----
-
-
-Contributing
-------------
-
+> $ npm install  
+> $ node ./app.js  
+> Browse to http://localhost:3000
 
 License
 -------
