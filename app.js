@@ -13,10 +13,8 @@ var methodOverride = require('method-override');
 var multer  = require('multer');
 
 var _ = require('lodash');
-var MongoStore = require('connect-mongo')(session);
 var flash = require('express-flash');
 var path = require('path');
-var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
@@ -46,14 +44,6 @@ var passportConf = require('./config/passport');
 var app = express();
 
 /**
- * Connect to MongoDB.
- */
-mongoose.connect(secrets.db);
-mongoose.connection.on('error', function() {
-  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
-});
-
-/**
  * Express configuration.
  */
 app.set('port', process.env.PORT || 3000);
@@ -74,8 +64,7 @@ app.use(cookieParser());
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: secrets.sessionSecret,
-  store: new MongoStore({ url: secrets.db, autoReconnect: true })
+  secret: secrets.sessionSecret
 }));
 app.use(passport.initialize());
 app.use(passport.session());
